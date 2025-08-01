@@ -11,3 +11,4 @@ flask
 opencv-python
 tiktoken
 streamlit
+scikit-learn
