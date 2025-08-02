@@ -568,4 +568,5 @@ if __name__ == '__main__':
     
     print("Fraud detection module loaded successfully")
 
-    app.run(host='0.0.0.0', port=8081, debug=False, use_reloader=False)
+    app.run(host='0.0.0.0', port=8085, debug=False, use_reloader=False)
+
