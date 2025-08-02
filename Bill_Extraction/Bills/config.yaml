@@ -1,0 +1,31 @@
+# Enhanced Configuration for Insurance Claim System
+# Replace with your actual API keys
+
+# Groq API Configuration
+GROQ_API_KEY: "GROQ_API_KEY" 
+
+# Qloo API Configuration (for insights)
+QLOO_API_KEY: "QLOO_API_KEY"
+
+# OpenAI API Key (legacy support - not used with Groq)
+OPENAI_API_KEY: ""
+
+# Fraud Detection Settings
+FRAUD_DETECTION:
+  enabled: true
+  high_amount_threshold: 50000
+  frequent_claims_threshold: 3
+  risk_score_threshold: 50
+
+# Application Settings
+APP_SETTINGS:
+  debug: true
+  host: "0.0.0.0"
+  port: 8081
+  max_file_size: 16777216  # 16MB
+  allowed_file_types: [".pdf"]
+
+# Database Settings (for future use)
+DATABASE:
+  enabled: false
+  # Future: Add database configuration for persistent storage

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Qloo Insights Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .place {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .place h2 { margin-top: 0; color: #333; }
+        .tag { background-color: #007BFF; color: white; padding: 3px 8px; border-radius: 4px; margin-right: 5px; font-size: 12px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>Qloo Insights</h1>
+
+    {% if insights.results.entities %}
+        {% for place in insights.results.entities %}
+            <div class="place">
+                <h2>{{ place.name }}</h2>
+                <p><strong>Address:</strong> {{ place.properties.address }}</p>
+                <p><strong>Description:</strong> {{ place.properties.description }}</p>
+                <p><strong>Business Rating:</strong> {{ place.properties.business_rating }}</p>
+                <p><strong>Popularity Score:</strong> {{ place.popularity | round(2) }}</p>
+
+                {% if place.external.resy %}
+                    <p><strong>Resy Rating:</strong> {{ place.external.resy[0].rating }} ({{ place.external.resy[0].rating_count }} reviews)</p>
+                    <p><strong>Resy Link:</strong> <a href="{{ place.external.resy[0].url }}" target="_blank">View on Resy</a></p>
+                {% endif %}
+
+                <p><strong>Good For:</strong>
+                    {% for tag in place.properties.good_for %}
+                        <span class="tag">{{ tag.name }}</span>
+                    {% endfor %}
+                </p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No places found.</p>
+    {% endif %}
+</body>
+</html>

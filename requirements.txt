@@ -10,5 +10,4 @@ PyPDF2
 flask
 opencv-python
 tiktoken
-streamlit
 scikit-learn

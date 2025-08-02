@@ -1,54 +1,68 @@
-# AI Powered Automated Claims Processing (ClaimTrackr)
+#  ClaimTrackr Bot
 
-## Problem Statement: 
-- Time-consuming and Error-prone Insurance Claim Processes
-- Efficient and accurate insurance claim processing is vital in the finance and banking industry. It impacts customer satisfaction, operational costs, and regulatory compliance. 
-However, this task is often hindered by complexity and vast amounts of data, making it time-consuming and prone to errors. This tool provides a solution by simplifying and automating insurance claim processing.
+ClaimTrackr is an AI-powered automation tool designed to simplify and accelerate the insurance claim process. By combining OCR, NLP, document embeddings, and fraud detection, it reduces manual effort, improves accuracy, and delivers faster claim approvals.
 
-## Context
-Leveraging the power of machine learning, natural language & Gen AI, this tool automates the traditionally manual insurance claim processing procedure. 
-•	Implementation of AI and Generative AI will enhance data analysis and predictive capabilities
-•	AI will provide deeper insights, improve accuracy, and streamline reporting processes
-•	Predictive features will enable proactive decision-making based on anticipated impact fluctuations.
+---
+
+## Problem Statement
+
+Insurance claim processing is traditionally time-consuming, error-prone, and data-heavy. Manual validation of policy terms, medical records, and historical claims increases operational burden and delays settlements. ClaimTrackr solves this through intelligent automation using AI, GenAI, and machine learning.
+
+---
 
 ## Objectives
-Develop a chatbot using AI to assist the process of claim processing, and approval.
-•	Real-time Support: Offer an executive summary of the claims, and also provide whether the claims are valid or not.
-•	Educational Resource: Share knowledge on membership handbooks
 
-![image](https://github.com/user-attachments/assets/b480145b-851d-44c4-84a3-b106b7136596)
+- Automate insurance claim processing with AI and NLP
+- Build a chatbot to support real-time claim evaluation and feedback
+- Deliver valid/invalid claim decisions with detailed summaries
+- Act as an educational resource referencing policy handbooks
 
-## How it works
-Leveraging the power of artificial intelligence and machine learning, ClaimTrackr automates the traditionally manual insurance claim processing procedure. Here’s a comparison of the time required for each task with and without ClaimTrackr Flow:
- 
-![image](https://github.com/user-attachments/assets/6a952a83-acfc-4110-9f2a-2e66aad049e3)
+---
 
-## Key Inputs
-For this particular project, we would need the below key inputs:
-•	Medical Insurance Company’s handbook & necessary documents
-•	Previous Claim details
-•	Claimant (Policy Holder) details – Personal, Medical records, and bills (if any)
+## Context
 
-## Architecture
-  
-![image](https://github.com/user-attachments/assets/0d269565-1555-4911-a0d3-36ecec431415)
+ClaimTrackr leverages:
+- OCR + NLP to interpret medical and policy documents
+- AI + GenAI for deep insights and predictive analysis
+- EDA for trends and anomaly detection
+- Embedded fraud detection for risk analysis
 
-Step 1: Data Collection and Exploratory Data Analysis
-ClaimTrackr initiates the insurance claim processing by automatically collecting the relevant data such as customer records, external data sources, medical records, policyholder information, and government data, ensuring that all information is accurate and up to date. Once the data is validated, ClaimTrackr performs an automated EDA, revealing helpful insights within the gathered data. This step is pivotal in identifying patterns, anomalies, and historical trends that can greatly enhance the overall efficiency of the insurance claim processing procedure.
+---
 
-Step 2: Embeddings Generation
-In this stage, textual data is converted into numerical embeddings using advanced techniques. These embeddings capture the semantic relationships within the data, enabling ClaimTrackr to retrieve and analyze information efficiently. The generated embeddings simplify claim information assessment against policy terms and conditions, medical records, and external data to determine claim validity and calculate settlement amounts.
+##  How It Works
 
-Step 3: Query Execution and Report Generation
-Once a claim is prepared for processing, ClaimTrackr utilizes the OpenAI Language Model (LLM) to evaluate the insurance claim status. A detailed report is promptly generated in response to the user’s query, providing essential information about the claim, its assessment, and the proposed settlement. The report generation process is characterized by its high efficiency and consistency, guaranteeing the inclusion of all pertinent information.
-Furthermore, with the help of embeddings, the OpenAI LLM is capable of offering deep insights, conducting a thorough review to detect any potential signs of fraud, and providing actionable recommendations for the claim.
+### Step 1: Data Collection + EDA
+- Automatically gathers customer records, policy info, external data, and previous claims
+- Performs Exploratory Data Analysis to uncover patterns and anomalies
 
-Step 4: Parsing and Final Output Generation
-After the report is generated by the LLM, ClaimTrackr employs a parsing technique to refine the report and extract useful insights. ClaimTrackr’s role in this phase involves delivering comprehensive, well-organized data that ultimately speeds up the approval process and reduces the time needed for claim settlement.
+### Step 2: Embedding Generation
+- Converts claim-related documents into vector embeddings
+- Enables efficient semantic search and matching across policy terms and claim details
 
-## Product Demo
+### Step 3: Query Execution + Report Generation
+- Uses OpenAI LLM to analyze claim validity and generate comprehensive reports
+- Includes risk evaluation, summaries, and recommendations
 
-![image](https://github.com/user-attachments/assets/e680e2f6-127c-4bee-9cef-d39b303c1a0e)
+### Step 4: Parsing + Final Output
+- Extracts key insights from reports and presents clean, actionable data
+- Speeds up approvals and reduces processing time
 
- ## Product Report
-Final report is generated with the final verdict whether the Insurance claim was valid or rejected, rejection criterias were claimed amount vs allowed amount, name validations and disease validation under the Exclusion list of the medical handbook.
+### Bonus: Fraud Detection Module
+- Detects potential fraud using data comparison, AI pattern recognition, and historical claim analysis
+
+---
+
+##  Key Inputs
+
+- Insurance company handbook & supporting documents  
+- Previous claim data and historical patterns  
+- Claimant details: personal info, medical records, bills  
+
+---
+
+##  Architecture
+
+```text
+PDF/Image Input ➜ OCR (EasyOCR/OpenCV) ➜ Preprocessing ➜
+Embeddings (LangChain/OpenAI) ➜ Query Engine ➜
+LLM-based Report Generation ➜ Parsing ➜ Final Decision Output
