@@ -567,6 +567,4 @@ if __name__ == '__main__':
         print("export QLOO_API_KEY='your_qloo_api_key_here'")
     
     print("Fraud detection module loaded successfully")
-
-    app.run(host='0.0.0.0', port=8085, debug=False, use_reloader=False)
-
+    app.run(host='0.0.0.0', port=8081, debug=True)
